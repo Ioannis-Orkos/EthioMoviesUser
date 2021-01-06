@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "149347411315",
+    "firebase_url": "https://ethiomoviesuser-1600109347633.firebaseio.com",
+    "project_id": "ethiomoviesuser-1600109347633",
+    "storage_bucket": "ethiomoviesuser-1600109347633.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:149347411315:android:abde216e0cd629d5fad106",
+        "android_client_info": {
+          "package_name": "com.ioannisnicos.ethiomoviesuser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "149347411315-fmejveen14tht171bo82japbl7a1tlbh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ioannisnicos.ethiomoviesuser",
+            "certificate_hash": "f6ef76d0100caa9550c2f9fd9c6ec434024d3d01"
+          }
+        },
+        {
+          "client_id": "149347411315-hl0licn18bohaglh4js48pu8ihig1h4k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEt6O_RaLLN_SsePvSd1x0It-MyJER3vc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "149347411315-hl0licn18bohaglh4js48pu8ihig1h4k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

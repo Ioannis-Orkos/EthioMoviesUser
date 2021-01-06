@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/gener_fillter"
+        android:title="Gener"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/year_filler"
+        android:title="Year"
+        app:showAsAction="always"  />
+
+</menu>

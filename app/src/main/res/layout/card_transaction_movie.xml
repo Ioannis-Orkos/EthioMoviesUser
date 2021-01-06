@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_store_background"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/imageview_transaction_banner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.7"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:color/darker_gray" />
+
+    <ImageView
+        android:id="@+id/imageViewGradient"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/gradient_full_fade_black" />
+
+    <TextView
+        android:id="@+id/textview_transaction_storename"
+        android:layout_width="173dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="-8dp"
+        android:text="TextView"
+        android:textAlignment="viewEnd"
+        android:textColor="#FBF5F5"
+        app:layout_constraintEnd_toEndOf="@+id/circleimageview_transaction_store"
+        app:layout_constraintTop_toBottomOf="@+id/circleimageview_transaction_store" />
+
+    <ImageView
+        android:id="@+id/imageView_movie_transactionCard"
+        android:layout_width="91dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.15"
+        app:layout_constraintStart_toStartOf="@+id/imageview_transaction_banner"
+        app:layout_constraintTop_toTopOf="@+id/imageview_transaction_banner"
+        app:layout_constraintWidth_percent="0.3"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textview_transaction_movietitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_sml_card_movies_lwr_black"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_movie_transactionCard"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_movie_transactionCard"
+        app:layout_constraintStart_toStartOf="@+id/imageView_movie_transactionCard"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+
+        android:id="@+id/circleimageview_transaction_store"
+        android:layout_width="56dp"
+
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton_transactionCard_del"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_transactionCard_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/abril_fatface"
+        android:maxLines="1"
+        android:text="Status - "
+        android:textAlignment="viewStart"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView_movie_transactionCard"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <TextView
+        android:id="@+id/textview_transaction_movieusermsg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:maxLines="2"
+        android:text="User msg - "
+        android:textAlignment="viewStart"
+        android:textColor="#FDFDFD"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/circleimageview_transaction_store"
+        app:layout_constraintStart_toEndOf="@+id/imageView_movie_transactionCard"
+        app:layout_constraintTop_toBottomOf="@+id/textView_transactionCard_status" />
+
+    <TextView
+        android:id="@+id/textview_transaction_moviestoremsg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:maxLines="2"
+        android:text="Store msg - "
+        android:textAlignment="viewStart"
+        android:textColor="#FDFDFD"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/circleimageview_transaction_store"
+        app:layout_constraintStart_toEndOf="@+id/imageView_movie_transactionCard"
+        app:layout_constraintTop_toBottomOf="@+id/textview_transaction_movieusermsg" />
+
+    <ImageButton
+        android:id="@+id/imageButton_transactionCard_del"
+        android:layout_width="27dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="4dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_delete_forever_24" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_transactionCard"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imageview_transaction_banner"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton_transactionCard_del"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

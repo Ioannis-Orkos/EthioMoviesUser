@@ -1,0 +1,67 @@
+<resources>
+
+    <string name="app_name">EthioMoviesUser</string>
+
+    <!-- Notification channels  -->
+    <string name="MEDIA_CHANNEL_ID">media</string>
+    <string name="CHANNEL_MEDIA_NAME">Media</string>
+    <string name="MEDIA_CHANNEL_DESCRIPTION">Get informed with new movies/tvshow updates</string>
+
+    <string name="ACCOUNT_CHANNEL_ID">account</string>
+    <string name="CHANNEL_ACCOUNT_NAME">Account</string>
+    <string name="ACCOUNT_CHANNEL_DESCRIPTION">Get informed with account activity</string>
+
+    <!-- Login activity  -->
+
+    <!-- Login activity end  -->
+
+
+    <!-- Main activity  -->
+        <!-- Navigation  -->
+        <string name="navigation_drawer_open">Open navigation drawer</string>
+        <string name="navigation_drawer_close">Close navigation drawer</string>
+
+        <string name="navigation_header_text">Ethio Movies</string>
+        <!-- Navigation end -->
+    <string name="main_title">Ethio ፊልም</string>
+
+
+    <string name="main_history_fragment_title">History</string>
+    <string name="main_movies_fragment_title">Movies</string>
+    <string name="main_tvshows_fragment_title">Tvshows</string>
+
+    <!-- Main activity end  -->
+
+
+
+
+    <!-- Tools  -->
+
+        <!-- Toast  -->
+        <string name="press_again_to_exit">Press again to exit</string>
+        <!-- Toast end -->
+
+        <!-- Snackbar  -->
+        <string name="snackbar_no_network">No internet connection</string>
+        <string name="snackbar_server_error">Unable to connect with server</string>
+        <string name="snackbar_retry">Retry</string>
+
+        <!-- Snackbar end  -->
+
+    <!-- Tools end  -->
+
+
+
+    <!-- TODO:placeholder text -->
+    <string name="blank_fragment_media">No media found.</string>
+
+
+
+    <string-array name="language">
+        <item>English</item>
+        <item>Amharic</item>
+        <item>Qubee</item>
+    </string-array>
+
+
+</resources>
