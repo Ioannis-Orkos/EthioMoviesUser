@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
@@ -18,13 +19,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
+import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.Target;
 import com.ioannisnicos.ethiomoviesuser.R;
 import com.ioannisnicos.ethiomoviesuser.database.FavouriteDBHandler;
 import com.ioannisnicos.ethiomoviesuser.models.Movies;
@@ -35,6 +41,7 @@ import java.security.MessageDigest;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -85,13 +92,26 @@ public class RowSmallMoviesRecyclerAdapter extends RecyclerView.Adapter<RowSmall
         options.override(mWidth,mHeight);
 
         Glide.with(mContext.get())
-                .asBitmap()
-                .override(mWidth/2,mHeight/2)
+                //.asBitmap()
+                //.override(mWidth/2,mHeight/2)
                 .load(mMovies.get(position).getPoster())
                 .centerCrop()
                 //.transform(new DrawGradient(mContext))
                 //  .apply(options)
-                .diskCacheStrategy(DiskCacheStrategy.DATA)
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .listener(new RequestListener<Drawable>() {
+                    @Override
+                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                        holder.mProgressBar.setVisibility(View.GONE);
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                        holder.mProgressBar.setVisibility(View.GONE);
+                        return false;
+                    }
+                })
                 .placeholder(R.drawable.ic_movie_black_24)
                 .into(holder.moviePosterImageView);
 //
@@ -125,6 +145,7 @@ public class RowSmallMoviesRecyclerAdapter extends RecyclerView.Adapter<RowSmall
          public ImageButton storeButton;
          public ImageButton fvbButton;
          public TextView movieYearTextView;
+         public ProgressBar mProgressBar;
 
 
         public MovieViewHolder(View itemView) {
@@ -141,6 +162,7 @@ public class RowSmallMoviesRecyclerAdapter extends RecyclerView.Adapter<RowSmall
             movieCard = itemView.findViewById(R.id.sml_movie_card_view);
             storeButton = itemView.findViewById(R.id.sml_movie_card_IBstore);
             fvbButton = itemView.findViewById(R.id.sml_movie_card_IBfav);
+            mProgressBar = itemView.findViewById(R.id.sml_movie_card_progressBar);
 
             storeButton.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -137,7 +137,6 @@ public class RentMovieDialog  extends AppCompatDialogFragment {
                     }
                 });
 
-
         return builder.create();
     }
 

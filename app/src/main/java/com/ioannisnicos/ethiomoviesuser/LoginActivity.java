@@ -8,6 +8,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
@@ -36,6 +38,8 @@ import com.ioannisnicos.ethiomoviesuser.retrofit_movie_response.QuerryResponse;
 import com.ioannisnicos.ethiomoviesuser.utils.ConnectivityBroadcastReceiver;
 import com.ioannisnicos.ethiomoviesuser.utils.NetworkConnection;
 
+import java.util.Locale;
+
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = LoginActivity.class.getSimpleName();
@@ -61,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_login);
 
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
@@ -69,6 +74,30 @@ public class LoginActivity extends AppCompatActivity {
         //Initializing Views
         signInButton = findViewById(R.id.button_login_sign_in);
         progressBar =  findViewById(R.id.progressBar_login);
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setMessage("fist");
+        alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Log.d(TAG, "onClick: closing dialog");
+                // now that the user has logged in, save it to shared preferences so the dialog won't
+                // pop up again
+
+
+                dialogInterface.dismiss();
+            }
+        });
+        alertDialogBuilder.setTitle("Title");
+        alertDialogBuilder.setCancelable(false);
+
+        alertDialogBuilder.setIcon(R.mipmap.ic_launcher);
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+                    //alertDialog.setCanceledOnTouchOutside(false);
+                    alertDialog.show();
+
+
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.

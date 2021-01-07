@@ -1,6 +1,7 @@
 package com.ioannisnicos.ethiomoviesuser.fragments;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -211,6 +212,8 @@ public class MoviesFragment extends Fragment {
                 RentMovieDialog dialog=new RentMovieDialog();
                                 dialog.setArguments(args);
                                 dialog.show(getFragmentManager(),"dialog");
+
+
 
             }
         });
@@ -472,7 +475,7 @@ public class MoviesFragment extends Fragment {
     }
 
     private void yearFilterAlertDialog() {
-        MaterialAlertDialogBuilder alertDialog = new MaterialAlertDialogBuilder(getContext());
+        MaterialAlertDialogBuilder alertDialog = new MaterialAlertDialogBuilder(getActivity());
         alertDialog.setTitle("Year");
 
         String[] items = {"2024","2023","2022","all","2021","2020","2019","2018","2017","2018","2017","2018","2016","2015","2014","2013","2012","2000","2000"
@@ -507,7 +510,11 @@ public class MoviesFragment extends Fragment {
             }
         });
 
+
         alertDialog.show();
+
+
+
     }
 
 

@@ -392,7 +392,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
              ft.add ( R.id.fragment_container_main, fragment, tag );
 
             mFragmentsTags.add(tag);
-            ft.addToBackStack (tag);
+            ft.addToBackStack(tag);
             ft.commit ();
             for(String tempTag : mFragmentsTags){
                 if(!tempTag.equals(tag))

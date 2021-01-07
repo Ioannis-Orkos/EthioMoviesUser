@@ -7,10 +7,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
-        public static final String BASE_URL = "http://af267cb33ada.ngrok.io/e_movie_api/";
+        public static final String BASE_URL = "http://84d894c8764e.ngrok.io/e_movie_api/";
         //public static final String BASE_URL = "http://35.230.153.27/e_movie_api/";
         //public static final String BASE_URL = "http://34.74.106.238/e_movie_api/";
-       //public static final String BASE_URL = "https://accretive-circles.000webhostapp.com/e_movie_api/";
+        //public static final String BASE_URL = "https://accretive-circles.000webhostapp.com/e_movie_api/";
         //public static final String BASE_URL = "http://192.168.1.238/ethio_movie_api/";
         //public static final String BASE_URL = "http://192.168.43.249/ethio_movie_api/";
 

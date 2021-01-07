@@ -13,8 +13,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.CustomTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -33,6 +37,7 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RentMovieAdapter extends RecyclerView.Adapter<RentMovieAdapter.RentMovieHolder> {
@@ -74,8 +79,12 @@ public class RentMovieAdapter extends RecyclerView.Adapter<RentMovieAdapter.Rent
 
         holder.mProgressBar.setVisibility(View.GONE);
         if(mStores.get(position).getBanner()!=null)
+
+
             Glide.with(mContext.get()).load(ApiClient.BASE_URL+mStores.get(position).getBanner())
                                   .diskCacheStrategy(DiskCacheStrategy.ALL)
+
+
                                   .into(new CustomTarget<Drawable>() {
                                      @Override
                                      public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
